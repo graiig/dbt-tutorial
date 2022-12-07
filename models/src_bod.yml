@@ -1,0 +1,88 @@
+version : 2
+
+sources:
+  - name: bod
+    database: PROD_RAW_DATA_REPOSITORY
+    schema: BOD
+    tables:
+      - name: DIMBILLINGCHANNEL
+        description: "referential of billing channel"
+      - name: DIMBILLINGMODE
+        description: "referential of billing mode"
+      - name: DIMBILLINGPROVIDER
+        description: "referential of billing provider"
+      - name: DIMFREQUENCY
+        description: "referential of frequency"
+      - name: DIMNETWORKCHANNEL
+        description: "referential of network channel"
+      - name: DIMORDERCHANNEL
+        description: "referential of order channel"
+      - name: DIMPAYOUT
+        description: "referential of payout"
+      - name: DIMPROVIDER
+        description: "referential of carrier"
+      - name: DIMPROVIDERSERVICE
+        description: "referential of provider service"
+      - name: DIMSERVICE
+        description: "referential of service"
+      - name: DATARAW_BILLED_ITEM_ACTUAL
+        description: "all details for billed items operations"
+      - name: DATARAW_INSTANCE
+        description: "all instances (subscriptions)"
+      - name: DATARAW_OPERATIONS_ACTUAL
+        description: "all operations"
+        columns:
+          - name: OPERA_ID
+            description: "uniq id of an operation (primary key)"
+            tests:
+              - unique
+              - not_null
+          - name: OPERA_BOD_BPCLS_ID
+            description: "NAN"
+          - name: OPERA_GENER_BLCHA_ID
+            description: "id of the billing channel entity"
+          - name: OPERA_OPERATION_DATE
+            description: "operation date not timezoned"
+          - name: OPERA_FINAL_DATE
+            description: "final date of the operation not timezoned"
+          - name: OPERA_USER_IDENTIFIER
+            description: "msisdn or alias"
+          - name: OPERA_BOD_USTYP_ID
+            description: "NAN"
+          - name: OPERA_GENER_JOBRO_ID__END_USER_PROVIDER
+            description: "id of the carrier entity"
+          - name: OPERA_GENER_JOBRO_ID__BILLING_PROVIDER
+            description: "id of the billing provider entity"
+          - name: OPERA_CLIENT_SESSION_ID
+            description: "NAN"
+          - name: OPERA_BILLING_PROVIDER_SESSION_ID
+          - name: OPERA_BOD_OPTYP_ID
+            description: "type of operation"
+          - name: OPERA_BOD_OPSTA_ID
+            description: "status of operation"
+          - name: OPERA_INSTA_ID
+            description: "id of the intance (subs)"
+          - name: OPERA_GENER_CNTRY_ID
+            description: "country"
+          - name: OPERA_LAST_STATE
+            description: "last state of the operation"
+          - name: OPERA_DATA
+            description: "json data"
+          - name: OPERA_INS_DATE
+            description: "insert date"
+          - name: OPERA_UPD_DATE
+            description: "update date"
+          - name: OPERA_DEL_DATE
+            description: "delete date"
+          - name: OPERA_BOD_CLSRV_ID
+            description: "id of the service entity"
+          - name: OPERA_ERO_BPSRV_ID
+            description: "id of the billing service entity"
+          - name: OPERA_GENER_ODCHA_ID
+            description: "id of the order channel entity"
+          - name: OPERA_GENER_NETCH_ID
+            description: "id of the network channel entity"
+          - name: OPERA_OPERATION_DATE_TZ
+            description: "operation date timezoned"
+          - name: OPERA_FINAL_DATE_TZ
+            description: "final date timezoned"
