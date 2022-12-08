@@ -36,7 +36,8 @@ select
  o.insta_id,
  sub_date,
  o.user_identifier,
- uncha_id
+ uncha_id,
+ i.sub_date_tz
  from operations o
  left join billed_items b on b.opera_id = o.opera_id
  left join instances i on i.insta_id = o.insta_id
